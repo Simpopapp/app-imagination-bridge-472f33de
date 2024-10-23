@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { useToast } from "@/hooks/use-toast"
 import { Palette } from "lucide-react"
 import useSound from "use-sound"
+import { PremiumBadge } from "@/components/ui/premium-badge"
 
 const colorSchemes = [
   {
@@ -47,16 +48,19 @@ const Theme = () => {
         className="max-w-4xl mx-auto space-y-8 pt-8"
       >
         <div className="text-center space-y-4">
-          <motion.div
-            initial={{ y: -20 }}
-            animate={{ y: 0 }}
-            className="flex items-center justify-center gap-3"
-          >
-            <Palette className="w-8 h-8 text-primary" />
-            <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
-              Escolha seu Tema
-            </h1>
-          </motion.div>
+          <div className="flex items-center justify-center gap-2 flex-wrap">
+            <motion.div
+              initial={{ y: -20 }}
+              animate={{ y: 0 }}
+              className="flex items-center justify-center gap-3"
+            >
+              <Palette className="w-8 h-8 text-primary" />
+              <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+                AKAFLOW - Escolha seu Tema
+              </h1>
+            </motion.div>
+            <PremiumBadge />
+          </div>
           <p className="text-muted-foreground text-lg">
             Selecione a combinação de cores que melhor representa seu app
           </p>

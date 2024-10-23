@@ -1,9 +1,10 @@
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button"
+import { PremiumButton } from "@/components/ui/premium-button"
+import { motion } from "framer-motion"
+import { useNavigate } from "react-router-dom"
 
 const Index = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-muted flex items-center justify-center p-4">
@@ -14,7 +15,7 @@ const Index = () => {
         className="text-center space-y-8"
       >
         <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
-          Creative Vibe Editor
+          AKAFLOW APP
         </h1>
         
         <p className="text-lg md:text-xl text-muted-foreground max-w-md mx-auto">
@@ -29,10 +30,13 @@ const Index = () => {
           >
             Começar Jornada
           </Button>
+          <div className="pt-2">
+            <PremiumButton />
+          </div>
         </div>
       </motion.div>
     </div>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index
