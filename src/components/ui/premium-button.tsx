@@ -9,7 +9,7 @@ import useSound from "use-sound"
 export const PremiumButton = () => {
   const [isPremium, setIsPremium] = useState(false)
   const { toast } = useToast()
-  const [playSuccess] = useSound('/sounds/success.mp3', { volume: 0.5 })
+  const [playSuccess] = useSound('./sounds/success.mp3', { volume: 0.5 })
 
   const handlePremium = () => {
     setIsPremium(true)

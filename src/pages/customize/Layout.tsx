@@ -32,8 +32,8 @@ const Layout = () => {
   const navigate = useNavigate()
   const { toast } = useToast()
   const { unlockAchievement } = useAchievements()
-  const [playHover] = useSound('/sounds/hover.mp3', { volume: 0.5 })
-  const [playSelect] = useSound('/sounds/select.mp3', { volume: 0.7 })
+  const [playHover] = useSound('./sounds/hover.mp3', { volume: 0.5 })
+  const [playSelect] = useSound('./sounds/select.mp3', { volume: 0.7 })
 
   const handleSelectLayout = (layoutName: string) => {
     playSelect()
