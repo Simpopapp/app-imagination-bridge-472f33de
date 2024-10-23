@@ -1,71 +1,101 @@
-# Welcome to your GPT Engineer project
+# Creative Vibe Editor 🎨
 
-## Project info
+## Visão Geral
+Creative Vibe Editor é uma aplicação mobile-first que transforma a experiência de idealização de apps em uma jornada interativa e envolvente. Em vez de confrontar usuários com formulários técnicos, guiamos eles através de uma experiência gamificada que revela naturalmente suas preferências e ideias.
 
-**URL**: https://run.gptengineer.app/projects/37acde57-2e81-42b2-8fb5-c5d32e91bf45/improve
+## Objetivo
+Criar uma plataforma onde usuários possam expressar suas ideias para apps de forma natural e divertida, sem a intimidação técnica tradicional.
 
-## How can I edit this code?
+## Arquitetura do Projeto
 
-There are several ways of editing your application.
+### Fluxo Principal
+1. **Onboarding Interativo**
+   - Introdução visual e envolvente
+   - Seleção de tema inicial (Light/Dark/Neon)
+   - Tutorial gamificado
 
-**Use GPT Engineer**
+2. **Jornada de Descoberta**
+   - Escolha de paletas de cores
+   - Seleção de layouts preferidos
+   - Interações com elementos de UI
+   - Mini-jogos de design
 
-Simply visit the GPT Engineer project at [GPT Engineer](https://gptengineer.app/projects/37acde57-2e81-42b2-8fb5-c5d32e91bf45/improve) and start prompting.
+3. **Ideação Natural**
+   - Campo de expressão livre
+   - Sugestões contextuais
+   - Visualização instantânea
 
-Changes made via gptengineer.app will be committed automatically to this repo.
+### Tecnologias Principais
+- React + Vite
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- React Router
+- Tanstack Query
+- Framer Motion
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in the GPT Engineer UI.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Estrutura de Diretórios
+```
+src/
+├── components/
+│   ├── ui/          # Componentes shadcn/ui
+│   ├── layout/      # Componentes de layout
+│   └── features/    # Componentes específicos
+├── pages/           # Páginas da aplicação
+├── hooks/           # Hooks customizados
+├── utils/           # Utilitários
+├── types/           # Tipos TypeScript
+└── styles/          # Estilos globais
 ```
 
-**Edit a file directly in GitHub**
+## Funcionalidades Principais
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 1. Sistema de Temas
+- Temas: Light, Dark, Neon
+- Transições suaves
+- Persistência local
 
-**Use GitHub Codespaces**
+### 2. Gamificação
+- Sistema de conquistas
+- Feedback visual e sonoro
+- Progresso desbloqueável
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### 3. Customização
+- Personalização de interface
+- Previews em tempo real
+- Exportação de preferências
 
-## What technologies are used for this project?
+### 4. Métricas e Analytics
+- Tracking de interações
+- Análise de preferências
+- Relatórios de uso
 
-This project is built with .
+## Instalação e Execução
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+# Instalar dependências
+npm install
 
-## How can I deploy this project?
+# Executar em desenvolvimento
+npm run dev
 
-All GPT Engineer projects can be deployed directly via the GPT Engineer app.
+# Construir para produção
+npm run build
+```
 
-Simply visit your project at [GPT Engineer](https://gptengineer.app/projects/37acde57-2e81-42b2-8fb5-c5d32e91bf45/improve) and click on Share -> Publish.
+## Próximos Passos
+1. Implementação do sistema de temas
+2. Desenvolvimento do onboarding interativo
+3. Criação do sistema de gamificação
+4. Integração de feedback sonoro
+5. Implementação de animações fluidas
 
-## I want to use a custom domain - is that possible?
+## Instruções para GPT Engineer
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.gptengineer.app/tips-tricks/custom-domain/)
+Para cada atualização, por favor forneça:
+1. Lista detalhada de alterações implementadas
+2. Screenshots ou descrições visuais das mudanças
+3. Novos componentes ou hooks adicionados
+4. Alterações na estrutura de arquivos
+5. Dependências adicionadas ou removidas
+6. Problemas encontrados e soluções aplicadas
