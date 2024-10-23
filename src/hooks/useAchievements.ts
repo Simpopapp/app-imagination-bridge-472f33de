@@ -33,6 +33,27 @@ export const useAchievements = create<AchievementsState>()(
           description: 'Experimentou todos os temas disponíveis',
           points: 250,
           unlocked: false
+        },
+        {
+          id: 'first_layout',
+          title: 'Arquiteto Visual',
+          description: 'Definiu seu primeiro layout',
+          points: 100,
+          unlocked: false
+        },
+        {
+          id: 'first_font',
+          title: 'Tipógrafo Iniciante',
+          description: 'Escolheu sua primeira fonte',
+          points: 100,
+          unlocked: false
+        },
+        {
+          id: 'customization_master',
+          title: 'Mestre da Customização',
+          description: 'Completou todas as etapas de personalização',
+          points: 500,
+          unlocked: false
         }
       ],
       totalPoints: 0,
