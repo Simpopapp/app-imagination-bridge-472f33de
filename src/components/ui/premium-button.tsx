@@ -14,14 +14,37 @@ export const PremiumButton = () => {
   const handlePremium = () => {
     setIsPremium(true)
     playSuccess()
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 }
-    })
+    
+    // Multiple confetti bursts
+    const duration = 3000
+    const end = Date.now() + duration
+    
+    const frame = () => {
+      confetti({
+        particleCount: 30,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0, y: 0.8 }
+      })
+      confetti({
+        particleCount: 30,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1, y: 0.8 }
+      })
+    
+      if (Date.now() < end) {
+        requestAnimationFrame(frame)
+      }
+    }
+    frame()
+
+    // Notify all components about premium status
+    document.dispatchEvent(new CustomEvent('premiumActivated'))
+    
     toast({
       title: "Bem-vindo ao AKAFLOW Premium!",
-      description: "Você agora tem acesso a todos os recursos premium.",
+      description: "Sua experiência agora será ainda mais incrível!",
       duration: 5000,
     })
   }
@@ -36,9 +59,22 @@ export const PremiumButton = () => {
         >
           <Button
             onClick={handlePremium}
-            className="bg-gradient-to-r from-amber-500 to-yellow-300 text-black hover:from-amber-600 hover:to-yellow-400"
+            className="bg-gradient-to-r from-amber-500 to-yellow-300 text-black hover:from-amber-600 hover:to-yellow-400 relative overflow-hidden"
           >
-            Torne-se AKAFLOW Premium
+            <span className="relative z-10">Torne-se AKAFLOW Premium</span>
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500"
+              animate={{
+                rotate: [0, 360],
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              style={{ opacity: 0.3 }}
+            />
           </Button>
         </motion.div>
       ) : (
