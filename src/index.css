@@ -24,6 +24,50 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 186 100% 50%;
   }
+
+  [data-theme="light"] {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 76.2% 36.3%;
+  }
+
+  [data-theme="neon"] {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
+  }
 }
 
 @layer base {
@@ -37,6 +81,17 @@
       radial-gradient(circle at 0% 50%, rgba(128, 0, 255, 0.1), transparent 50%),
       radial-gradient(circle at 100% 50%, rgba(0, 255, 255, 0.1), transparent 50%);
   }
+
+  [data-theme="neon"] body {
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(163, 51, 255, 0.15), transparent 50%),
+      radial-gradient(circle at 0% 50%, rgba(255, 51, 221, 0.15), transparent 50%),
+      radial-gradient(circle at 100% 50%, rgba(51, 255, 255, 0.15), transparent 50%);
+  }
+
+  [data-theme="light"] body {
+    background-image: none;
+  }
 }
 
 .tech-gradient {
@@ -48,6 +103,24 @@
   );
   background-size: 200% 200%;
   animation: gradientFlow 15s ease infinite;
+}
+
+[data-theme="neon"] .tech-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(163, 51, 255, 0.3) 0%,
+    rgba(255, 51, 221, 0.3) 50%,
+    rgba(51, 255, 255, 0.3) 100%
+  );
+}
+
+[data-theme="light"] .tech-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.2) 0%,
+    rgba(59, 130, 246, 0.2) 50%,
+    rgba(34, 197, 94, 0.2) 100%
+  );
 }
 
 .tech-border {
@@ -75,8 +148,32 @@
   mask-composite: exclude;
 }
 
+[data-theme="neon"] .tech-border::before {
+  background: linear-gradient(
+    135deg,
+    rgba(163, 51, 255, 0.7),
+    rgba(51, 255, 255, 0.7)
+  );
+}
+
+[data-theme="light"] .tech-border::before {
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.5),
+    rgba(59, 130, 246, 0.5)
+  );
+}
+
 .glow-text {
   text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+[data-theme="neon"] .glow-text {
+  text-shadow: 0 0 10px rgba(163, 51, 255, 0.5);
+}
+
+[data-theme="light"] .glow-text {
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
 }
 
 @keyframes gradientFlow {
@@ -86,5 +183,5 @@
 }
 
 .premium-button {
-  /* Add your premium button styles here */
+  /* ... keep existing code */
 }
