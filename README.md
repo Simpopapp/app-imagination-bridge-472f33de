@@ -1,101 +1,84 @@
-# Creative Vibe Editor 🎨
+# AKAFLOW - Editor de Experiências Digitais 🌐
 
-## Visão Geral
-Creative Vibe Editor é uma aplicação mobile-first que transforma a experiência de idealização de apps em uma jornada interativa e envolvente. Em vez de confrontar usuários com formulários técnicos, guiamos eles através de uma experiência gamificada que revela naturalmente suas preferências e ideias.
+## Sobre o Projeto
+AKAFLOW é uma plataforma inovadora que transforma o processo de criação de interfaces digitais em uma experiência imersiva e cyberpunk. Combinando elementos de design brutal com funcionalidades avançadas, permite que usuários materializem suas visões de forma única e impactante.
 
-## Objetivo
-Criar uma plataforma onde usuários possam expressar suas ideias para apps de forma natural e divertida, sem a intimidação técnica tradicional.
+## Características Principais
 
-## Arquitetura do Projeto
+### 🎯 Design System
+- **Temas Dinâmicos**: Light, Dark e Neon Cyberpunk
+- **Layouts Responsivos**: Adaptação inteligente para diferentes dispositivos
+- **Tipografia Customizada**: Seleção de fontes para máximo impacto visual
+- **Animações Brutais**: Efeitos visuais cyberpunk e glitch
 
-### Fluxo Principal
-1. **Onboarding Interativo**
-   - Introdução visual e envolvente
-   - Seleção de tema inicial (Light/Dark/Neon)
-   - Tutorial gamificado
+### ⚡ Funcionalidades Core
+- **Sistema de Conquistas**: Desbloqueie achievements conforme evolui
+- **Feedback Sonoro**: Interações com retorno auditivo
+- **Preview em Tempo Real**: Visualize mudanças instantaneamente
+- **Modo Premium**: Recursos exclusivos e personalizações avançadas
 
-2. **Jornada de Descoberta**
-   - Escolha de paletas de cores
-   - Seleção de layouts preferidos
-   - Interações com elementos de UI
-   - Mini-jogos de design
+## Tecnologias
 
-3. **Ideação Natural**
-   - Campo de expressão livre
-   - Sugestões contextuais
-   - Visualização instantânea
-
-### Tecnologias Principais
+### Frontend
 - React + Vite
 - TypeScript
 - Tailwind CSS
-- shadcn/ui
-- React Router
-- Tanstack Query
 - Framer Motion
+- shadcn/ui
 
-### Estrutura de Diretórios
+### Gerenciamento de Estado
+- Zustand
+- TanStack Query
+
+### Ferramentas de Desenvolvimento
+- ESLint
+- PostCSS
+- Bun
+
+## Estrutura do Projeto
 ```
 src/
 ├── components/
-│   ├── ui/          # Componentes shadcn/ui
-│   ├── layout/      # Componentes de layout
+│   ├── ui/          # Componentes base
 │   └── features/    # Componentes específicos
 ├── pages/           # Páginas da aplicação
 ├── hooks/           # Hooks customizados
-├── utils/           # Utilitários
-├── types/           # Tipos TypeScript
-└── styles/          # Estilos globais
+└── lib/            # Utilitários e configurações
 ```
 
-## Funcionalidades Principais
-
-### 1. Sistema de Temas
-- Temas: Light, Dark, Neon
-- Transições suaves
-- Persistência local
-
-### 2. Gamificação
-- Sistema de conquistas
-- Feedback visual e sonoro
-- Progresso desbloqueável
-
-### 3. Customização
-- Personalização de interface
-- Previews em tempo real
-- Exportação de preferências
-
-### 4. Métricas e Analytics
-- Tracking de interações
-- Análise de preferências
-- Relatórios de uso
-
-## Instalação e Execução
+## Instalação
 
 ```bash
 # Instalar dependências
-npm install
+bun install
 
-# Executar em desenvolvimento
-npm run dev
+# Iniciar em desenvolvimento
+bun dev
 
-# Construir para produção
-npm run build
+# Build para produção
+bun build
 ```
 
-## Próximos Passos
-1. Implementação do sistema de temas
-2. Desenvolvimento do onboarding interativo
-3. Criação do sistema de gamificação
-4. Integração de feedback sonoro
-5. Implementação de animações fluidas
+## Uso
+1. **Inicialização**: Acesse a página inicial e escolha seu tema base
+2. **Customização**: Navegue pelo editor de experiências
+3. **Preview**: Visualize suas criações em tempo real
+4. **Export**: Exporte suas configurações personalizadas
 
-## Instruções para GPT Engineer
+## Contribuição
+1. Fork o projeto
+2. Crie sua Feature Branch (`git checkout -b feature/NovaFeature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona NovaFeature'`)
+4. Push para a Branch (`git push origin feature/NovaFeature`)
+5. Abra um Pull Request
 
-Para cada atualização, por favor forneça:
-1. Lista detalhada de alterações implementadas
-2. Screenshots ou descrições visuais das mudanças
-3. Novos componentes ou hooks adicionados
-4. Alterações na estrutura de arquivos
-5. Dependências adicionadas ou removidas
-6. Problemas encontrados e soluções aplicadas
+## Licença
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## Contato
+- Website: [akaflow.dev](https://akaflow.dev)
+- Email: contato@akaflow.dev
+- GitHub: [@akaflow](https://github.com/akaflow)
+
+---
+Desenvolvido com 🔥 por AKAFLOW Team
