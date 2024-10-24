@@ -1,84 +1,176 @@
-# AKAFLOW - Editor de Experiências Digitais 🌐
+# AKAFLOW - Documentação Técnica
 
-## Sobre o Projeto
-AKAFLOW é uma plataforma inovadora que transforma o processo de criação de interfaces digitais em uma experiência imersiva e cyberpunk. Combinando elementos de design brutal com funcionalidades avançadas, permite que usuários materializem suas visões de forma única e impactante.
+## Arquitetura do Sistema
 
-## Características Principais
+### Core Components (`/src/components/ui/`)
 
-### 🎯 Design System
-- **Temas Dinâmicos**: Light, Dark e Neon Cyberpunk
-- **Layouts Responsivos**: Adaptação inteligente para diferentes dispositivos
-- **Tipografia Customizada**: Seleção de fontes para máximo impacto visual
-- **Animações Brutais**: Efeitos visuais cyberpunk e glitch
+#### Componentes Base
+- `avatar.tsx`: Implementa componente de avatar usando Radix UI (`@radix-ui/react-avatar`)
+  - Suporta imagens, fallbacks e customização via className
+  - Implementa forwardRef para referências DOM
 
-### ⚡ Funcionalidades Core
-- **Sistema de Conquistas**: Desbloqueie achievements conforme evolui
-- **Feedback Sonoro**: Interações com retorno auditivo
-- **Preview em Tempo Real**: Visualize mudanças instantaneamente
-- **Modo Premium**: Recursos exclusivos e personalizações avançadas
+- `badge.tsx`: Badge component usando class-variance-authority
+  - Variantes: default, secondary, destructive, outline
+  - Customizável via className e variant props
 
-## Tecnologias
+- `progress.tsx`: Barra de progresso usando Radix UI
+  - Animação suave via CSS transforms
+  - Suporte a valores dinâmicos (0-100)
+
+#### Componentes de Interface
+- `premium-button.tsx`: Botão premium com efeitos visuais
+  - Integração com sistema de sons via useSound
+  - Animações com Framer Motion
+  - Feedback via toast notifications
+
+- `animated-title.tsx`: Título animado com efeitos glitch
+  - Efeitos cyberpunk via CSS animations
+  - Integração com modo premium
+  - Animações responsivas com Framer Motion
+
+### Hooks Customizados (`/src/hooks/`)
+
+- `useAchievements.ts`: Gerenciamento de conquistas
+  - Estado persistente via Zustand
+  - Sistema de pontuação
+  - Notificações toast para feedback
+
+- `use-toast.ts`: Sistema de notificações
+  - Queue management para múltiplos toasts
+  - Customização de duração e aparência
+  - Limite de toasts simultâneos
+
+### Pages (`/src/pages/`)
+
+#### Fluxo Principal
+- `Index.tsx`: Página inicial
+  - Apresentação do produto
+  - Integração com modo premium
+  - Navegação principal
+
+- `Onboarding.tsx`: Processo de introdução
+  - Theme switcher integration
+  - Animações de entrada
+  - Sistema de navegação
+
+#### Customização
+- `Customize.tsx`: Hub central de customização
+  - Rotas para subseções (theme, layout, typography)
+  - Animações de transição
+  - Grid responsivo de opções
+
+- `customize/Theme.tsx`: Customização de temas
+  - Esquemas de cores predefinidos
+  - Preview em tempo real
+  - Integração com achievements
+
+- `customize/Layout.tsx`: Configuração de layouts
+  - Opções de grid responsivo
+  - Previews interativos
+  - Sistema de feedback sonoro
+
+- `customize/Typography.tsx`: Gestão tipográfica
+  - Seleção de fontes
+  - Preview em tempo real
+  - Integração com sistema de conquistas
+
+### Utilitários (`/src/lib/`)
+
+- `utils.ts`: Funções utilitárias
+  - Merge de classes Tailwind
+  - Helpers para tipagem
+
+### Estilização
+
+#### CSS Global (`/src/index.css`)
+- Configuração de temas via CSS variables
+- Animações globais
+- Efeitos visuais cyberpunk
+
+#### Tailwind Config
+- Extensão de cores
+- Configuração de plugins
+- Animações customizadas
+
+## Tecnologias Core
 
 ### Frontend
-- React + Vite
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- shadcn/ui
+- React 18.3.1 com TypeScript
+- Vite para build e desenvolvimento
+- Tailwind CSS para estilização
+- Framer Motion para animações
+- shadcn/ui para componentes base
 
-### Gerenciamento de Estado
-- Zustand
-- TanStack Query
+### Estado & Data Fetching
+- Zustand para gerenciamento de estado
+- TanStack Query para data fetching
+- Local Storage para persistência
 
-### Ferramentas de Desenvolvimento
-- ESLint
-- PostCSS
-- Bun
+### UI/UX
+- Radix UI para componentes acessíveis
+- Lucide React para ícones
+- use-sound para feedback sonoro
+- Sonner para toasts
 
-## Estrutura do Projeto
-```
-src/
-├── components/
-│   ├── ui/          # Componentes base
-│   └── features/    # Componentes específicos
-├── pages/           # Páginas da aplicação
-├── hooks/           # Hooks customizados
-└── lib/            # Utilitários e configurações
-```
-
-## Instalação
+## Setup & Desenvolvimento
 
 ```bash
-# Instalar dependências
+# Instalação de dependências
 bun install
 
-# Iniciar em desenvolvimento
+# Desenvolvimento
 bun dev
 
-# Build para produção
+# Build de produção
 bun build
 ```
 
-## Uso
-1. **Inicialização**: Acesse a página inicial e escolha seu tema base
-2. **Customização**: Navegue pelo editor de experiências
-3. **Preview**: Visualize suas criações em tempo real
-4. **Export**: Exporte suas configurações personalizadas
+### Estrutura de Arquivos
+```
+src/
+├── components/
+│   └── ui/              # Componentes shadcn/ui e customizados
+├── hooks/               # Hooks customizados
+├── lib/                 # Utilitários
+├── pages/              # Páginas e rotas
+│   └── customize/      # Páginas de customização
+└── styles/             # Estilos globais
+```
+
+## Padrões de Desenvolvimento
+
+### Componentes
+- Uso de TypeScript para type safety
+- Implementação de forwardRef quando necessário
+- Integração com sistema de temas
+- Responsividade via Tailwind
+
+### Estado
+- Zustand para estado global
+- React Query para cache e fetching
+- Local Storage para persistência
+
+### Estilização
+- Tailwind CSS para estilos
+- CSS Variables para temas
+- Animações via Framer Motion
 
 ## Contribuição
-1. Fork o projeto
-2. Crie sua Feature Branch (`git checkout -b feature/NovaFeature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona NovaFeature'`)
-4. Push para a Branch (`git push origin feature/NovaFeature`)
-5. Abra um Pull Request
+
+### Setup do Ambiente
+1. Fork do repositório
+2. Clone local
+3. Instalação de dependências
+4. Setup do ESLint e TypeScript
+
+### Workflow
+1. Branch feature/fix
+2. Desenvolvimento
+3. Testes
+4. Pull Request
 
 ## Licença
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
-## Contato
-- Website: [akaflow.dev](https://akaflow.dev)
-- Email: contato@akaflow.dev
-- GitHub: [@akaflow](https://github.com/akaflow)
+MIT License - Veja LICENSE para detalhes
 
 ---
-Desenvolvido com 🔥 por AKAFLOW Team
+Documentação mantida por AKAFLOW Team
